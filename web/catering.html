@@ -15,20 +15,22 @@
       fontFamily: { serif:['"Playfair Display"','serif'], sans:['Poppins','system-ui','sans-serif'], script:['"Great Vibes"','cursive'] },
     }}}
   </script>
-  <link rel="stylesheet" href="assets/css/styles.css?v=10">
+  <link rel="stylesheet" href="assets/css/styles.css?v=11">
 </head>
 <body class="font-sans text-ink" data-page="catering.html">
   <div id="site-header"></div>
 
   <main>
     <!-- Hero -->
-    <section class="catering-bg relative overflow-hidden lg:h-[46vh] lg:min-h-[360px] lg:max-h-[500px]">
-      <div class="relative lg:h-full max-w-7xl mx-auto px-4 py-14 lg:py-0 flex items-center">
-        <div class="max-w-lg reveal">
-          <p class="font-script text-3xl text-wine">Sladké okamžiky pro vaši akci</p>
-          <h1 class="font-serif text-4xl sm:text-5xl leading-tight">Sweet catering<br>na míru</h1>
-          <p class="mt-5 text-ink/75 max-w-md">Svatby, firemní akce, oslavy, coffee breaky i rauty. Připravíme sweet bar, dezertní stůl nebo velký dort — vždy přesně podle vaší představy a rozpočtu.</p>
-          <a href="#poptavka" class="btn btn-wine px-7 py-3.5 mt-7"><i data-lucide="pen-line" class="w-5 h-5"></i> Nezávazná poptávka</a>
+    <section class="py-8 lg:py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="catering-bg relative overflow-hidden rounded-3xl flex items-center min-h-[400px] lg:min-h-[460px] reveal">
+          <div class="relative px-8 sm:px-10 lg:px-16 py-12 max-w-lg">
+            <p class="font-script text-3xl text-wine">Sladké okamžiky pro vaši akci</p>
+            <h1 class="font-serif text-4xl sm:text-5xl leading-tight">Sweet catering<br>na míru</h1>
+            <p class="mt-5 text-ink/75 max-w-md">Svatby, firemní akce, oslavy, coffee breaky i rauty. Připravíme sweet bar, dezertní stůl nebo velký dort — vždy přesně podle vaší představy a rozpočtu.</p>
+            <a href="#poptavka" class="btn btn-wine px-7 py-3.5 mt-7"><i data-lucide="pen-line" class="w-5 h-5"></i> Nezávazná poptávka</a>
+          </div>
         </div>
       </div>
     </section>
@@ -70,7 +72,7 @@
   <div id="site-footer"></div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="assets/js/main.js?v=10"></script>
+  <script src="assets/js/main.js?v=11"></script>
   <script>
     const EVENTS = [['heart','Svatby'],['briefcase','Firemní akce'],['party-popper','Oslavy'],['coffee','Coffee breaky'],['utensils','Rauty']];
     document.getElementById('eventTypes').innerHTML = EVENTS.map(e => `
