@@ -75,8 +75,9 @@ body { color: #3a2b2e; background: #fffdfb; }
   background-repeat: no-repeat;
   background-color: #fca2b2;
 }
-/* catering scene hero (catering.html) — uniform pink matches the no-edges image */
-.scene-catering { background-color: #fca2b2; }
+/* catering scene hero (catering.html) — uniform pink matches the no-edges image.
+   Higher specificity so it wins over the later .scene-hero default bg-color. */
+.scene-hero.scene-catering { background-color: #fca2b2; }
 .catering-glow {
   background:
     linear-gradient(to right, #fbe1e2 0%, rgba(251,225,226,.6) 36%, rgba(251,225,226,0) 62%);
