@@ -30,14 +30,24 @@ body { color: #3a2b2e; background: #fffdfb; }
     linear-gradient(135deg, #fdf6f5 0%, #fbeeed 58%, #f5e6e5 100%);
 }
 
-/* Hero with the supplied photographic background (cake scene on the right) */
+/* Hero with the supplied photographic scene (cake on the right) */
 .hero-bg {
   position: relative;
+  background-color: #fbeaea;
+  /* mobile fallback: image as cover behind the text */
   background-image: url('../img/hero-background.png');
   background-size: cover;
-  background-position: center;   /* full-width image; trims only the empty top/bottom margins */
+  background-position: center;
   background-repeat: no-repeat;
 }
+/* On desktop the scene is an <img> on the right (full, not cropped), so the
+   section height can follow the viewport (~half screen) without cutting the cake. */
+.hero-scene {
+  position: absolute; top: 0; right: 0; height: 100%; width: auto; max-width: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 16%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 16%);
+}
+@media (min-width: 1024px) { .hero-bg { background-image: none; } }
 
 /* Catering banner with supplied background (desserts on the right) */
 .catering-bg {
