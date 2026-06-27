@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dorty od Andreji — zakázkové dorty, cukroví a sweet catering</title>
+  <meta name="description" content="Zakázková cukrářská výroba dortů, sladkostí a sweet cateringu v Pardubicích. Navrhněte si dort snů v Dortfigurátoru.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          wine: { DEFAULT:'#a62447', dark:'#7d1733', light:'#c13a5d' },
+          blush: { 50:'#fdf6f5', 100:'#fbeceb', 200:'#f8dcdb', 300:'#f3c4c4' },
+          ink: '#3a2b2e', cream: '#fffdfb',
+        },
+        fontFamily: {
+          serif: ['"Playfair Display"','serif'],
+          sans: ['Poppins','system-ui','sans-serif'],
+          script: ['"Great Vibes"','cursive'],
+        },
+      }}
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-sans text-ink" data-page="index.html">
+  <div id="site-header"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="bg-hero overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 py-16 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal">
+          <span class="inline-flex items-center gap-2 text-wine text-sm font-medium bg-white/70 px-4 py-1.5 rounded-full mb-6">
+            <i data-lucide="cake-slice" class="w-4 h-4"></i> Cukrářské studio · Pardubice a okolí
+          </span>
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] text-ink">
+            Dorty, které dělají<br>vaše chvíle
+            <span class="font-script text-wine text-5xl sm:text-6xl lg:text-7xl">výjimečné</span>
+            <i data-lucide="heart" class="inline w-7 h-7 text-wine fill-wine align-middle"></i>
+          </h1>
+          <p class="mt-6 text-ink/70 text-lg max-w-md leading-relaxed">
+            Navrhněte si dort snů v našem Dortfigurátoru, nebo se inspirujte galerií realizací. Ručně zdobené, z čerstvých surovin, přesně pro vaši příležitost.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="dortfigurator.html" class="btn btn-wine px-7 py-3.5">
+              <i data-lucide="wand-sparkles" class="w-5 h-5"></i> Navrhnout v Dortfigurátoru
+            </a>
+            <a href="galerie.html" class="btn btn-outline px-7 py-3.5">
+              <i data-lucide="images" class="w-5 h-5"></i> Prohlédnout galerii
+            </a>
+          </div>
+          <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-ink/65">
+            <span class="flex items-center gap-2"><i data-lucide="star" class="w-4 h-4 text-wine fill-wine"></i> 4,9 / 5 hodnocení</span>
+            <span class="flex items-center gap-2"><i data-lucide="badge-check" class="w-4 h-4 text-wine"></i> 500+ spokojených zákazníků</span>
+          </div>
+        </div>
+
+        <div class="relative reveal">
+          <div class="relative mx-auto w-fit">
+            <img src="assets/img/hero-cake.png" alt="Patrový dort s růžemi" class="w-[300px] sm:w-[380px] lg:w-[440px] drop-shadow-2xl rounded-3xl">
+            <!-- love card -->
+            <div class="absolute -bottom-4 -left-2 sm:left-0 bg-white rounded-2xl shadow-xl px-5 py-4 max-w-[200px]">
+              <div class="flex items-center gap-1 text-wine mb-1">
+                <i data-lucide="heart" class="w-4 h-4 fill-wine"></i>
+              </div>
+              <p class="text-sm font-medium leading-snug">Každý dort je dělaný <span class="text-wine font-semibold">s láskou</span></p>
+            </div>
+            <!-- price badge -->
+            <div class="absolute top-4 -right-3 sm:-right-6 bg-white/95 backdrop-blur rounded-2xl shadow-xl px-4 py-3 text-center">
+              <p class="text-[11px] uppercase tracking-wide text-ink/50">již od</p>
+              <p class="font-serif text-xl text-wine font-semibold">3 000 Kč</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="bg-white border-y border-blush-100">
+      <div class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="flex items-center gap-3"><span class="w-11 h-11 grid place-items-center rounded-full bg-blush-50 text-wine"><i data-lucide="truck" class="w-5 h-5"></i></span><div class="text-sm"><p class="font-semibold">Doprava po Pardubicích</p><p class="text-ink/55">a blízkém okolí</p></div></div>
+        <div class="flex items-center gap-3"><span class="w-11 h-11 grid place-items-center rounded-full bg-blush-50 text-wine"><i data-lucide="store" class="w-5 h-5"></i></span><div class="text-sm"><p class="font-semibold">Osobní odběr</p><p class="text-ink/55">na provozovně</p></div></div>
+        <div class="flex items-center gap-3"><span class="w-11 h-11 grid place-items-center rounded-full bg-blush-50 text-wine"><i data-lucide="leaf" class="w-5 h-5"></i></span><div class="text-sm"><p class="font-semibold">Čerstvé suroviny</p><p class="text-ink/55">od lokálních dodavatelů</p></div></div>
+        <div class="flex items-center gap-3"><span class="w-11 h-11 grid place-items-center rounded-full bg-blush-50 text-wine"><i data-lucide="heart-handshake" class="w-5 h-5"></i></span><div class="text-sm"><p class="font-semibold">Stovky zákazníků</p><p class="text-ink/55">se k nám vrací</p></div></div>
+      </div>
+    </section>
+
+    <!-- KATEGORIE -->
+    <section class="bg-blush-fade py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-end justify-between mb-10">
+          <div class="reveal">
+            <p class="font-script text-3xl text-wine">Sladký sortiment</p>
+            <h2 class="font-serif text-3xl sm:text-4xl">Oblíbené kategorie</h2>
+          </div>
+          <a href="galerie.html" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-wine hover:gap-2.5 transition-all">Zobrazit vše <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5" id="catGrid"></div>
+      </div>
+    </section>
+
+    <!-- CATERING -->
+    <section class="py-4 lg:py-8">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="relative overflow-hidden rounded-3xl bg-hero grid md:grid-cols-2 items-center reveal">
+          <div class="p-9 lg:p-14">
+            <h2 class="font-serif text-3xl lg:text-4xl leading-tight">Sweet catering<br><span class="font-script text-wine text-4xl lg:text-5xl">pro vaše akce</span></h2>
+            <p class="mt-5 text-ink/70 max-w-sm">Svatby, oslavy, firemní akce nebo sweet bary. Připravíme nabídku na míru přesně pro vás — od cupcakes po velký dort.</p>
+            <a href="catering.html" class="btn btn-wine px-7 py-3.5 mt-7"><i data-lucide="utensils" class="w-5 h-5"></i> Poptat catering</a>
+          </div>
+          <div class="h-full min-h-[260px]">
+            <img src="assets/img/catering.png" alt="Sweet catering — dezertní stůl" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JAK TO FUNGUJE -->
+    <section class="py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12 reveal">
+          <p class="font-script text-3xl text-wine">Jednoduše</p>
+          <h2 class="font-serif text-3xl sm:text-4xl">Jak to u nás funguje?</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative" id="stepsGrid"></div>
+      </div>
+    </section>
+
+    <!-- INSPIRACE / GALERIE PREVIEW -->
+    <section class="bg-blush-fade py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-end justify-between mb-10">
+          <div class="reveal">
+            <p class="font-script text-3xl text-wine">Inspirujte se</p>
+            <h2 class="font-serif text-3xl sm:text-4xl">Vybrané dorty</h2>
+          </div>
+          <a href="galerie.html" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-wine hover:gap-2.5 transition-all">Celá galerie <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-5" id="previewGrid"></div>
+      </div>
+    </section>
+
+    <!-- RECENZE -->
+    <section class="py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12 reveal">
+          <p class="font-script text-3xl text-wine">Děkujeme za důvěru</p>
+          <h2 class="font-serif text-3xl sm:text-4xl">Co o nás říkají zákazníci</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6" id="reviewsGrid"></div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="pb-16 lg:pb-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="bg-hero rounded-3xl px-8 py-10 lg:px-14 lg:py-12 flex flex-col lg:flex-row items-center justify-between gap-6 reveal">
+          <div class="flex items-center gap-4 text-center lg:text-left">
+            <span class="hidden sm:grid w-14 h-14 place-items-center rounded-2xl bg-white text-wine shrink-0"><i data-lucide="mail" class="w-6 h-6"></i></span>
+            <div>
+              <h3 class="font-serif text-2xl">Nenechte si ujít sladké novinky</h3>
+              <p class="text-ink/65 text-sm mt-1">Inspirace, sezónní nabídky a speciální akce přímo do schránky.</p>
+            </div>
+          </div>
+          <form class="flex w-full max-w-md gap-2" onsubmit="return false">
+            <input type="email" required placeholder="Váš e-mail" class="flex-1 px-5 py-3.5 rounded-full border border-blush-200 bg-white/90 focus:outline-none focus:ring-2 focus:ring-wine/40">
+            <button class="btn btn-wine px-6 py-3.5">Přihlásit se</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Homepage data-driven sections
+    const CATS = [
+      ['Dorty','zakázkové dorty na každou příležitost','assets/img/cat-dorty.png'],
+      ['Cukroví','tradiční i moderní druhy cukroví','assets/img/cat-cukrovi.png'],
+      ['Cupcakes','dekorativní, které potěší každého','assets/img/cat-cupcakes.png'],
+      ['Makronky','křehké, jemné a neodolatelné','assets/img/cat-makronky.png'],
+      ['Dárkové balíčky','sladké dárky pro vaše blízké','assets/img/cat-darkove-balicky.png'],
+    ];
+    document.getElementById('catGrid').innerHTML = CATS.map(c => `
+      <a href="galerie.html" class="cat-card group bg-white rounded-2xl overflow-hidden border border-blush-100 text-center">
+        <div class="aspect-[4/3] overflow-hidden"><img src="${c[2]}" alt="${c[0]}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+        <div class="p-4"><h3 class="font-serif text-lg">${c[0]}</h3><p class="text-xs text-ink/55 mt-1">${c[1]}</p></div>
+      </a>`).join('');
+
+    const STEPS = [
+      ['cake-slice','Vyberte nebo navrhněte','dort v Dortfigurátoru, nebo se inspirujte galerií'],
+      ['calendar-heart','Zvolte termín','a způsob převzetí — doprava nebo osobní odběr'],
+      ['clipboard-check','Objednejte','nebo odešlete nezávaznou poptávku'],
+      ['party-popper','My se postaráme','o zbytek a připravíme dort na váš den'],
+    ];
+    document.getElementById('stepsGrid').innerHTML = STEPS.map((s,i) => `
+      <div class="text-center reveal">
+        <div class="relative mx-auto w-20 h-20 grid place-items-center rounded-full bg-blush-50 border border-blush-200 text-wine mb-5">
+          <i data-lucide="${s[0]}" class="w-8 h-8"></i>
+          <span class="absolute -top-1 -right-1 w-7 h-7 grid place-items-center rounded-full bg-wine text-white text-sm font-semibold">${i+1}</span>
+        </div>
+        <h3 class="font-serif text-lg">${s[1]}</h3>
+        <p class="text-sm text-ink/60 mt-2 max-w-[220px] mx-auto">${s[2]}</p>
+      </div>`).join('');
+
+    const PREVIEW = [
+      ['Něžná růžová','ruzova-drip','3 000'],
+      ['Lesní plody','lesni-ovoce','3 400'],
+      ['Dětský unicorn','unicorn-matrix','3 200'],
+      ['Cookies & cream','oreo-cookies','3 600'],
+    ];
+    document.getElementById('previewGrid').innerHTML = PREVIEW.map(c => `
+      <a href="galerie.html" class="cake-card group bg-white rounded-2xl overflow-hidden border border-blush-100">
+        <div class="aspect-square overflow-hidden"><img src="assets/img/cakes/${c[1]}.png" alt="${c[0]}" class="cake-img w-full h-full object-cover"></div>
+        <div class="p-4"><h3 class="font-serif text-lg">${c[0]}</h3><p class="text-sm text-wine font-semibold mt-1">od ${c[2]} Kč</p></div>
+      </a>`).join('');
+
+    const REVIEWS = [
+      ['Dort byl nejen nádherný, ale i naprosto božský! Komunikace skvělá a všechno proběhlo bez problémů.','Petra K.'],
+      ['Objednávala jsem dort na svatbu a byl přesně podle našich představ. Mockrát děkujeme!','Markéta S.'],
+      ['Nejlepší makronky, jaké jsem kdy měla! Určitě objednám znovu.','Veronika T.'],
+    ];
+    document.getElementById('reviewsGrid').innerHTML = REVIEWS.map(r => `
+      <div class="bg-white rounded-2xl border border-blush-100 p-7 reveal">
+        <div class="flex gap-1 text-wine mb-4">${'<i data-lucide=\'star\' class=\'w-4 h-4 fill-wine\'></i>'.repeat(5)}</div>
+        <p class="text-ink/75 leading-relaxed">„${r[0]}"</p>
+        <div class="flex items-center gap-3 mt-5">
+          <span class="w-10 h-10 grid place-items-center rounded-full bg-wine text-white font-semibold">${r[1][0]}</span>
+          <span class="font-medium text-sm">${r[1]}</span>
+        </div>
+      </div>`).join('');
+
+    if (window.lucide) lucide.createIcons();
+  </script>
+</body>
+</html>

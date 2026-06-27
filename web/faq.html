@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Časté dotazy (FAQ) — Dorty od Andreji</title>
+  <meta name="description" content="Odpovědi na nejčastější otázky — objednávka, termíny, platba, doprava, alergie a skladování dortů.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { wine:{DEFAULT:'#a62447',dark:'#7d1733',light:'#c13a5d'}, blush:{50:'#fdf6f5',100:'#fbeceb',200:'#f8dcdb',300:'#f3c4c4'}, ink:'#3a2b2e', cream:'#fffdfb' },
+      fontFamily: { serif:['"Playfair Display"','serif'], sans:['Poppins','system-ui','sans-serif'], script:['"Great Vibes"','cursive'] },
+    }}}
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-sans text-ink" data-page="faq.html">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="bg-hero">
+      <div class="max-w-4xl mx-auto px-4 py-12 text-center">
+        <nav class="text-xs text-ink/50 mb-3"><a href="index.html" class="hover:text-wine">Domů</a> <span class="mx-1">/</span> Časté dotazy</nav>
+        <p class="font-script text-3xl text-wine">Než se zeptáte</p>
+        <h1 class="font-serif text-4xl sm:text-5xl">Časté dotazy</h1>
+        <p class="mt-3 text-ink/65 max-w-xl mx-auto">Vše podstatné o objednávce, termínech a převzetí. Nenašli jste odpověď? Rádi poradíme.</p>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="space-y-3" id="faqList"></div>
+
+        <div class="bg-hero rounded-2xl p-7 mt-10 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+          <span class="w-12 h-12 grid place-items-center rounded-full bg-white text-wine shrink-0"><i data-lucide="messages-square" class="w-6 h-6"></i></span>
+          <div class="flex-1">
+            <p class="font-serif text-lg">Nenašli jste, co jste hledali?</p>
+            <p class="text-sm text-ink/60">Napište nám, ozveme se obvykle do jednoho pracovního dne.</p>
+          </div>
+          <a href="kontakt.html" class="btn btn-wine px-6 py-3 whitespace-nowrap">Napsat dotaz</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    const FAQ = [
+      ['S jakým předstihem si mám dort objednat?','Zakázkové dorty doporučujeme objednat alespoň 7–10 dní předem. U svateb a větších akcí ideálně 4–6 týdnů. Menší sortiment (cupcakes, makronky) zvládneme i dříve — vždy podle aktuální výrobní kapacity, kterou uvidíte i v Dortfigurátoru.'],
+      ['Jak probíhá objednávka?','Navrhněte si dort v Dortfigurátoru nebo se inspirujte galerií. Poté odešlete závaznou objednávku, nebo nezávaznou poptávku. Ozveme se s potvrzením, finální cenou a domluvíme detaily a termín převzetí.'],
+      ['Jaké jsou možnosti platby?','Přijímáme platební kartu, Apple Pay, Google Pay, QR platbu, bankovní převod i hotovost při osobním převzetí. Podrobnosti a pravidla najdete na stránce <a href="doprava-a-platba.html">Doprava a platba</a>.'],
+      ['Dovážíte dorty?','Ano, rozvážíme po Pardubicích a blízkém okolí — cena dopravy se odvíjí od vzdálenosti. Vždy je možný i osobní odběr na provozovně zdarma.'],
+      ['Můžu si dort upravit přesně podle sebe?','Samozřejmě — to je naše srdcovka. V <a href="dortfigurator.html">Dortfigurátoru</a> si zvolíte tvar, korpus, náplň, krém, potah, barvy, dekorace, figurky i text na dort. Netradiční přání řešíme individuálně, neváhejte se ozvat.'],
+      ['Nabízíte bezlepkové, veganské nebo bezlaktózové varianty?','U vybraných dortů ano. Napište nám prosím své alergie a požadavky předem — společně najdeme řešení. Přehled alergenů najdete na stránce <a href="alergeny.html">Alergeny</a>.'],
+      ['Jak je to se zálohou a stornem?','U individuálních zakázek vybíráme zálohu, která potvrzuje rezervaci termínu. Konkrétní storno podmínky a lhůty najdete v <a href="obchodni-podminky.html">Obchodních podmínkách</a>.'],
+      ['Jak mám dort skladovat a jak dlouho vydrží?','Dorty skladujte v chladu (2–8 °C) a spotřebujte zpravidla do 2–3 dnů. Z lednice je ideální dort vyndat cca 30 minut před podáváním, aby vynikla chuť.'],
+    ];
+    document.getElementById('faqList').innerHTML = FAQ.map(f => `
+      <div class="faq-item">
+        <button class="faq-q"><span>${f[0]}</span><i data-lucide="chevron-down" class="faq-ico w-5 h-5"></i></button>
+        <div class="faq-a"><div class="faq-a-inner">${f[1]}</div></div>
+      </div>`).join('');
+    if (window.lucide) lucide.createIcons();
+  </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dortfigurátor — navrhněte si dort snů | Dorty od Andreji</title>
+  <meta name="description" content="Interaktivní konfigurátor dortů — vyberte příležitost, počet porcí, tvar a patra. Získejte orientační cenu a vytvořte objednávku nebo poptávku.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { wine:{DEFAULT:'#a62447',dark:'#7d1733',light:'#c13a5d'}, blush:{50:'#fdf6f5',100:'#fbeceb',200:'#f8dcdb',300:'#f3c4c4'}, ink:'#3a2b2e', cream:'#fffdfb' },
+      fontFamily: { serif:['"Playfair Display"','serif'], sans:['Poppins','system-ui','sans-serif'], script:['"Great Vibes"','cursive'] },
+    }}}
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-sans text-ink bg-blush-50" data-page="dortfigurator.html">
+  <div id="site-header"></div>
+
+  <main id="configurator">
+    <!-- Steps -->
+    <section class="bg-white border-b border-blush-100">
+      <div class="max-w-6xl mx-auto px-4 py-6">
+        <div id="stepBar" class="flex items-center"></div>
+      </div>
+    </section>
+
+    <div class="max-w-6xl mx-auto px-4 py-10">
+      <div class="text-center mb-10">
+        <p class="font-script text-3xl text-wine">Krok za krokem</p>
+        <h1 class="font-serif text-3xl sm:text-4xl">Vytvořte dort přesně podle vašich přání</h1>
+        <p class="mt-2 text-ink/60">Sestavte si dort snů a sledujte orientační cenu v reálném čase.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8 items-start">
+        <!-- LEFT: options -->
+        <div class="lg:col-span-2 space-y-8">
+          <div class="bg-white rounded-2xl border border-blush-100 p-6 lg:p-8">
+            <h2 class="font-serif text-2xl mb-1">1. Základní volby</h2>
+            <p class="text-sm text-ink/55 mb-7">Začneme tím nejdůležitějším — pro koho a jak velký dort tvoříme.</p>
+
+            <!-- Příležitost -->
+            <h3 class="text-sm font-semibold uppercase tracking-wide text-ink/70 mb-3">Příležitost</h3>
+            <div class="grid grid-cols-3 sm:grid-cols-4 gap-3 mb-9" id="occasionGrid"></div>
+
+            <!-- Počet porcí -->
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-sm font-semibold uppercase tracking-wide text-ink/70">Počet porcí</h3>
+              <span id="servingsOut" class="text-wine font-serif text-xl font-semibold">20 porcí</span>
+            </div>
+            <input type="range" id="servings" class="cake-range w-full" min="6" max="80" value="20" step="2">
+            <div class="flex justify-between text-xs text-ink/45 mt-2 mb-9"><span>6 porcí</span><span>80 porcí</span></div>
+
+            <!-- Tvar -->
+            <h3 class="text-sm font-semibold uppercase tracking-wide text-ink/70 mb-3">Tvar dortu</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-9" id="shapeGrid"></div>
+
+            <!-- Patra -->
+            <h3 class="text-sm font-semibold uppercase tracking-wide text-ink/70 mb-3">Počet pater</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="tiersGrid"></div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <button class="btn btn-soft px-6 py-3"><i data-lucide="arrow-left" class="w-4 h-4"></i> Zpět</button>
+            <button class="btn btn-wine px-8 py-3.5">Pokračovat <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+          </div>
+
+          <!-- Help -->
+          <div class="bg-hero rounded-2xl p-6 flex items-center gap-4">
+            <span class="w-12 h-12 grid place-items-center rounded-full bg-white text-wine shrink-0"><i data-lucide="messages-square" class="w-6 h-6"></i></span>
+            <div class="flex-1">
+              <p class="font-serif text-lg">Potřebujete poradit?</p>
+              <p class="text-sm text-ink/60">Rádi vám pomůžeme s výběrem i netradičním přáním.</p>
+            </div>
+            <a href="kontakt.html" class="btn btn-outline px-5 py-2.5 text-sm whitespace-nowrap">Napište nám</a>
+          </div>
+        </div>
+
+        <!-- RIGHT: preview -->
+        <aside class="lg:sticky lg:top-28 space-y-5">
+          <div class="bg-white rounded-2xl border border-blush-100 overflow-hidden">
+            <div class="px-5 pt-5 pb-3 flex items-center justify-between">
+              <h3 class="font-serif text-lg">Náhled dortu</h3>
+              <span class="tag">živý náhled</span>
+            </div>
+            <div class="bg-hero px-6 py-4 grid place-items-center">
+              <img src="assets/img/cakes/ruzova-drip.png" alt="Náhled dortu" class="w-48 drop-shadow-xl rounded-2xl">
+            </div>
+            <div class="p-5">
+              <h4 class="text-xs uppercase tracking-wide text-ink/50 mb-3">Vaše volby</h4>
+              <dl class="space-y-2.5 text-sm">
+                <div class="flex justify-between"><dt class="text-ink/55">Příležitost</dt><dd id="sumOccasion" class="font-medium">Narozeniny</dd></div>
+                <div class="flex justify-between"><dt class="text-ink/55">Tvar</dt><dd id="sumShape" class="font-medium">Kulatý</dd></div>
+                <div class="flex justify-between"><dt class="text-ink/55">Počet pater</dt><dd id="sumTiers" class="font-medium">2 patra</dd></div>
+                <div class="flex justify-between"><dt class="text-ink/55">Počet porcí</dt><dd id="previewServings" class="font-medium">20 porcí</dd></div>
+                <div class="flex justify-between"><dt class="text-ink/55">Orientační hmotnost</dt><dd id="previewWeight" class="font-medium">4,4 kg</dd></div>
+              </dl>
+              <div class="border-t border-blush-100 mt-4 pt-4">
+                <p class="text-xs uppercase tracking-wide text-ink/50">Orientační cena</p>
+                <p id="previewPrice" class="font-serif text-3xl text-wine font-semibold">3 600 Kč</p>
+                <p class="text-xs text-ink/45 mt-1">Konečná cena dle finálních detailů a dekorace.</p>
+              </div>
+              <div class="flex gap-2 mt-5">
+                <button class="btn btn-wine flex-1 justify-center py-3">Uložit návrh</button>
+                <button class="btn btn-soft px-3.5" aria-label="Oblíbené"><i data-lucide="heart" class="w-4 h-4"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-ink/50 px-1">
+            <i data-lucide="shield-check" class="w-4 h-4 text-wine"></i> Nezávazné — objednávku potvrdíte až na konci.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Step bar
+    const STEPS = [['cake','Základ'],['layers','Náplně'],['paint-bucket','Potah'],['flower-2','Dekorace'],['type','Text a grafika'],['sliders-horizontal','Detaily'],['clipboard-check','Shrnutí']];
+    document.getElementById('stepBar').innerHTML = STEPS.map((s,i) => {
+      const active = i === 0;
+      const node = `<div class="flex flex-col items-center gap-1.5 shrink-0">
+          <div class="w-11 h-11 grid place-items-center rounded-full border-2 ${active ? 'bg-wine border-wine text-white' : 'border-blush-200 text-ink/40 bg-white'}"><i data-lucide="${s[0]}" class="w-5 h-5"></i></div>
+          <span class="text-[11px] font-medium ${active ? 'text-wine' : 'text-ink/45'} hidden sm:block">${i+1}. ${s[1]}</span>
+        </div>`;
+      const line = i < STEPS.length-1 ? `<div class="step-line ${i===0?'done':''} mx-1 sm:mx-2"></div>` : '';
+      return node + line;
+    }).join('');
+
+    // Option tiles
+    const OCCASIONS = [['cake','Narozeniny'],['heart','Svatba'],['party-popper','Dětská oslava'],['gem','Výročí'],['briefcase','Firemní'],['badge-percent','Promo akce'],['gift','Křtiny'],['more-horizontal','Jiné']];
+    const SHAPES = [['circle','Kulatý'],['square','Čtvercový'],['rectangle-horizontal','Obdélníkový'],['heart','Srdce']];
+    const TIERS = [['1 patro','1'],['2 patra','2'],['3 patra','3'],['Více pater','více']];
+
+    function tile(key, ico, label, val, selected) {
+      return `<button data-opt="${key}" data-val="${val ?? label}" class="opt ${selected?'selected':''} bg-blush-50 border border-blush-200 rounded-xl p-3 flex flex-col items-center gap-2 text-center">
+        <span class="opt-ico w-10 h-10 grid place-items-center rounded-full bg-white text-wine"><i data-lucide="${ico}" class="w-5 h-5"></i></span>
+        <span class="text-xs font-medium leading-tight">${label}</span>
+      </button>`;
+    }
+    document.getElementById('occasionGrid').innerHTML = OCCASIONS.map((o,i) => tile('occasion',o[0],o[1],o[1],i===0)).join('');
+    document.getElementById('shapeGrid').innerHTML = SHAPES.map((s,i) => tile('shape',s[0],s[1],s[1],i===0)).join('');
+    document.getElementById('tiersGrid').innerHTML = TIERS.map((t,i) => tile('tiers', i===3?'layers':'cake', t[0], t[1], i===1)).join('');
+
+    if (window.lucide) lucide.createIcons();
+    // Tiles are built above (inline, before DOMContentLoaded), so main.js
+    // initConfigurator() picks them up when DOMContentLoaded fires.
+  </script>
+</body>
+</html>

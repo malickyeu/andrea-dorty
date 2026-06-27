@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet catering — Dorty od Andreji</title>
+  <meta name="description" content="Sweet catering pro svatby, firemní akce, oslavy, coffee breaky a rauty. Pošlete nezávaznou poptávku a my připravíme nabídku na míru.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { wine:{DEFAULT:'#a62447',dark:'#7d1733',light:'#c13a5d'}, blush:{50:'#fdf6f5',100:'#fbeceb',200:'#f8dcdb',300:'#f3c4c4'}, ink:'#3a2b2e', cream:'#fffdfb' },
+      fontFamily: { serif:['"Playfair Display"','serif'], sans:['Poppins','system-ui','sans-serif'], script:['"Great Vibes"','cursive'] },
+    }}}
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-sans text-ink" data-page="catering.html">
+  <div id="site-header"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="bg-hero">
+      <div class="max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="font-script text-3xl text-wine">Sladké okamžiky pro vaši akci</p>
+          <h1 class="font-serif text-4xl sm:text-5xl leading-tight">Sweet catering<br>na míru</h1>
+          <p class="mt-5 text-ink/70 max-w-md">Svatby, firemní akce, oslavy, coffee breaky i rauty. Připravíme sweet bar, dezertní stůl nebo velký dort — vždy přesně podle vaší představy a rozpočtu.</p>
+          <a href="#poptavka" class="btn btn-wine px-7 py-3.5 mt-7"><i data-lucide="pen-line" class="w-5 h-5"></i> Nezávazná poptávka</a>
+        </div>
+        <img src="assets/img/catering.png" alt="Sweet catering — dezertní stůl" class="rounded-3xl shadow-xl w-full object-cover">
+      </div>
+    </section>
+
+    <!-- Typy akcí -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-10"><h2 class="font-serif text-3xl sm:text-4xl">Pro jaké akce pečeme</h2></div>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-5" id="eventTypes"></div>
+      </div>
+    </section>
+
+    <!-- Poptávka -->
+    <section id="poptavka" class="py-12 bg-blush-fade">
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="text-center mb-8">
+          <p class="font-script text-3xl text-wine">Ozvěte se nám</p>
+          <h2 class="font-serif text-3xl sm:text-4xl">Poptávka cateringu</h2>
+          <p class="mt-2 text-ink/60">Vyplňte formulář a my se vám ozveme s nabídkou do 2 pracovních dnů.</p>
+        </div>
+        <form class="bg-white rounded-2xl border border-blush-100 p-6 lg:p-8 grid sm:grid-cols-2 gap-5" onsubmit="alert('Děkujeme! Toto je ukázkový web — poptávka se zatím neodesílá.'); return false;">
+          <label class="block"><span class="lbl">Typ akce</span>
+            <select class="fld"><option>Svatba</option><option>Firemní akce</option><option>Oslava</option><option>Coffee break</option><option>Raut</option><option>Jiné</option></select></label>
+          <label class="block"><span class="lbl">Datum akce</span><input type="date" class="fld"></label>
+          <label class="block"><span class="lbl">Počet hostů</span><input type="number" min="1" placeholder="např. 50" class="fld"></label>
+          <label class="block"><span class="lbl">Orientační rozpočet</span><input type="text" placeholder="např. 8 000 Kč" class="fld"></label>
+          <label class="block sm:col-span-2"><span class="lbl">Popis a přání</span><textarea rows="4" placeholder="Co si představujete? Barvy, motiv, alergie…" class="fld"></textarea></label>
+          <label class="block"><span class="lbl">Jméno a příjmení</span><input type="text" class="fld"></label>
+          <label class="block"><span class="lbl">E-mail nebo telefon</span><input type="text" class="fld"></label>
+          <div class="sm:col-span-2 flex items-center justify-between gap-4 pt-2">
+            <p class="text-xs text-ink/45 flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-wine"></i> Poptávka je nezávazná a zdarma.</p>
+            <button class="btn btn-wine px-8 py-3.5">Odeslat poptávku</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    const EVENTS = [['heart','Svatby'],['briefcase','Firemní akce'],['party-popper','Oslavy'],['coffee','Coffee breaky'],['utensils','Rauty']];
+    document.getElementById('eventTypes').innerHTML = EVENTS.map(e => `
+      <div class="bg-white rounded-2xl border border-blush-100 p-6 text-center cat-card">
+        <span class="w-12 h-12 grid place-items-center rounded-full bg-blush-50 text-wine mx-auto mb-3"><i data-lucide="${e[0]}" class="w-6 h-6"></i></span>
+        <p class="font-medium">${e[1]}</p>
+      </div>`).join('');
+    if (window.lucide) lucide.createIcons();
+  </script>
+</body>
+</html>

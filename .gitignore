@@ -1,0 +1,14 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Scratch / temp
+scratchpad_crops/
+*.tmp
+/tmp/
+
+# Node (pokud později přibude build)
+node_modules/

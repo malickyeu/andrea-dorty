@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O nás — Dorty od Andreji</title>
+  <meta name="description" content="Příběh cukrářského studia Dorty od Andreji. Ručně zdobené dorty z čerstvých surovin, s láskou a péčí o každý detail.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { wine:{DEFAULT:'#a62447',dark:'#7d1733',light:'#c13a5d'}, blush:{50:'#fdf6f5',100:'#fbeceb',200:'#f8dcdb',300:'#f3c4c4'}, ink:'#3a2b2e', cream:'#fffdfb' },
+      fontFamily: { serif:['"Playfair Display"','serif'], sans:['Poppins','system-ui','sans-serif'], script:['"Great Vibes"','cursive'] },
+    }}}
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-sans text-ink" data-page="o-nas.html">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="bg-hero">
+      <div class="max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="font-script text-3xl text-wine">Náš příběh</p>
+          <h1 class="font-serif text-4xl sm:text-5xl leading-tight">Pečeme s láskou,<br>od první mouky</h1>
+          <p class="mt-5 text-ink/70 max-w-md">Dorty od Andreji vznikly z vášně pro cukrařinu a radosti, kterou přináší sladký okamžik. Každý dort tvoříme ručně, z čerstvých surovin od lokálních dodavatelů a s důrazem na každý detail.</p>
+          <p class="mt-4 text-ink/70 max-w-md">Ať už slavíte narozeniny, svatbu nebo jen tak — postaráme se, aby byl váš dort stejně výjimečný jako vaše chvíle.</p>
+          <a href="dortfigurator.html" class="btn btn-wine px-7 py-3.5 mt-7"><i data-lucide="wand-sparkles" class="w-5 h-5"></i> Navrhnout dort</a>
+        </div>
+        <img src="assets/img/hero-cake.png" alt="Dort od Andreji" class="w-full max-w-md mx-auto rounded-3xl drop-shadow-2xl">
+      </div>
+    </section>
+
+    <section class="py-14 bg-white border-y border-blush-100">
+      <div class="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center" id="stats"></div>
+    </section>
+
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <p class="font-script text-3xl text-wine">Čemu věříme</p>
+          <h2 class="font-serif text-3xl sm:text-4xl">Naše hodnoty</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6" id="values"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    const STATS = [['8+','let zkušeností'],['1 200+','upečených dortů'],['500+','spokojených zákazníků'],['100%','ručně zdobeno']];
+    document.getElementById('stats').innerHTML = STATS.map(s => `
+      <div><p class="font-serif text-4xl text-wine font-semibold">${s[0]}</p><p class="text-sm text-ink/55 mt-1">${s[1]}</p></div>`).join('');
+
+    const VALUES = [
+      ['leaf','Čerstvé suroviny','Pracujeme jen s kvalitními surovinami od lokálních dodavatelů — žádné polotovary.'],
+      ['hand-heart','Ruční práce','Každý dort zdobíme ručně, do posledního lístku a kapky polevy.'],
+      ['sparkles','Originální návrhy','Žádný dort není stejný — tvoříme přesně podle vašich přání a příležitosti.'],
+    ];
+    document.getElementById('values').innerHTML = VALUES.map(v => `
+      <div class="bg-white rounded-2xl border border-blush-100 p-7 cat-card">
+        <span class="w-12 h-12 grid place-items-center rounded-full bg-blush-50 text-wine mb-4"><i data-lucide="${v[0]}" class="w-6 h-6"></i></span>
+        <h3 class="font-serif text-xl mb-2">${v[1]}</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">${v[2]}</p>
+      </div>`).join('');
+    if (window.lucide) lucide.createIcons();
+  </script>
+</body>
+</html>

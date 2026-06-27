@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alergeny — Dorty od Andreji</title>
+  <meta name="description" content="Přehled zákonných alergenů (1–14) podle EU. Máte alergii nebo speciální požadavek? Napište nám předem, najdeme řešení.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { wine:{DEFAULT:'#a62447',dark:'#7d1733',light:'#c13a5d'}, blush:{50:'#fdf6f5',100:'#fbeceb',200:'#f8dcdb',300:'#f3c4c4'}, ink:'#3a2b2e', cream:'#fffdfb' },
+      fontFamily: { serif:['"Playfair Display"','serif'], sans:['Poppins','system-ui','sans-serif'], script:['"Great Vibes"','cursive'] },
+    }}}
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-sans text-ink" data-page="alergeny.html">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="bg-hero">
+      <div class="max-w-4xl mx-auto px-4 py-12 text-center">
+        <nav class="text-xs text-ink/50 mb-3"><a href="index.html" class="hover:text-wine">Domů</a> <span class="mx-1">/</span> Alergeny</nav>
+        <p class="font-script text-3xl text-wine">Pečeme s ohledem na vás</p>
+        <h1 class="font-serif text-4xl sm:text-5xl">Alergeny</h1>
+        <p class="mt-3 text-ink/65 max-w-xl mx-auto">Přehled zákonných alergenů dle nařízení EU č. 1169/2011. Konkrétní složení každého výrobku vám rádi sdělíme.</p>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="flex items-center gap-2 justify-center mb-8 text-sm text-ink/60">
+          <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-wine"></span> Často v našich výrobcích</span>
+          <span class="inline-flex items-center gap-1.5 ml-4"><span class="w-3 h-3 rounded-full bg-blush-200"></span> Zpravidla se nevyskytuje</span>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="allergenGrid"></div>
+
+        <div class="bg-white rounded-2xl border border-blush-100 p-6 lg:p-8 mt-10 flex gap-4">
+          <i data-lucide="info" class="w-6 h-6 text-wine shrink-0 mt-0.5"></i>
+          <div class="prose-cake !text-sm">
+            <p class="!mb-2"><strong>Důležité upozornění.</strong> Naše výrobky se připravují v provozu, kde se pracuje s lepkem, vejci, mlékem, ořechy a dalšími alergeny. I u výrobků, které daný alergen v receptuře nemají, proto nelze zcela vyloučit jeho stopové množství.</p>
+            <p class="!mb-0">Máte-li alergii nebo speciální dietní požadavek (např. bezlepkové či veganské varianty), <a href="kontakt.html">napište nám předem</a> — citlivě vše projdeme a najdeme bezpečné řešení.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // [number, name, detail, commonInBakery]
+    const ALLERGENS = [
+      [1,'Obiloviny s lepkem','pšenice, žito, ječmen, oves',true],
+      [2,'Korýši','krevety, krabi, raci',false],
+      [3,'Vejce','a výrobky z nich',true],
+      [4,'Ryby','a výrobky z nich',false],
+      [5,'Arašídy','podzemnice olejná',true],
+      [6,'Sójové boby','a výrobky ze sóji',true],
+      [7,'Mléko','včetně laktózy',true],
+      [8,'Skořápkové plody','mandle, lískové a vlašské ořechy…',true],
+      [9,'Celer','a výrobky z něj',false],
+      [10,'Hořčice','a výrobky z ní',false],
+      [11,'Sezamová semena','a výrobky z nich',true],
+      [12,'Oxid siřičitý a siřičitany','konzervanty',false],
+      [13,'Vlčí bob (lupina)','a výrobky z něj',false],
+      [14,'Měkkýši','hlemýždi, mušle, chobotnice',false],
+    ];
+    document.getElementById('allergenGrid').innerHTML = ALLERGENS.map(a => `
+      <div class="bg-white rounded-2xl border ${a[3]?'border-wine/30':'border-blush-100'} p-4 flex items-center gap-4">
+        <span class="w-11 h-11 grid place-items-center rounded-full font-serif font-semibold ${a[3]?'bg-wine text-white':'bg-blush-100 text-wine'}">${a[0]}</span>
+        <div><p class="font-medium leading-tight">${a[1]}</p><p class="text-xs text-ink/55 mt-0.5">${a[2]}</p></div>
+      </div>`).join('');
+    if (window.lucide) lucide.createIcons();
+  </script>
+</body>
+</html>

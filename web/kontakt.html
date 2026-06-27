@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — Dorty od Andreji</title>
+  <meta name="description" content="Kontaktujte cukrářské studio Dorty od Andreji. Pardubice a okolí. Napište nám nebo zavolejte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { wine:{DEFAULT:'#a62447',dark:'#7d1733',light:'#c13a5d'}, blush:{50:'#fdf6f5',100:'#fbeceb',200:'#f8dcdb',300:'#f3c4c4'}, ink:'#3a2b2e', cream:'#fffdfb' },
+      fontFamily: { serif:['"Playfair Display"','serif'], sans:['Poppins','system-ui','sans-serif'], script:['"Great Vibes"','cursive'] },
+    }}}
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-sans text-ink" data-page="kontakt.html">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="bg-hero">
+      <div class="max-w-7xl mx-auto px-4 py-14 text-center">
+        <p class="font-script text-3xl text-wine">Ozvěte se nám</p>
+        <h1 class="font-serif text-4xl sm:text-5xl">Kontakt</h1>
+        <p class="mt-3 text-ink/65 max-w-xl mx-auto">Máte dotaz, speciální přání nebo chcete poradit s výběrem? Rádi vám pomůžeme.</p>
+      </div>
+    </section>
+
+    <section class="py-14">
+      <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-10">
+        <!-- Info -->
+        <div>
+          <div class="space-y-4" id="contactInfo"></div>
+          <div class="mt-8 bg-white rounded-2xl border border-blush-100 p-6">
+            <h3 class="font-serif text-xl mb-4 flex items-center gap-2"><i data-lucide="clock" class="w-5 h-5 text-wine"></i> Otevírací doba</h3>
+            <dl class="text-sm divide-y divide-blush-100" id="hours"></dl>
+            <p class="text-xs text-ink/45 mt-4">Objednávky a vyzvednutí po předchozí domluvě.</p>
+          </div>
+          <div class="mt-6 rounded-2xl overflow-hidden border border-blush-100 bg-blush-50 h-56 grid place-items-center text-center">
+            <div class="text-ink/40"><i data-lucide="map-pin" class="w-8 h-8 mx-auto mb-2 text-wine/60"></i><p class="text-sm">Provozovna — Pardubice<br><span class="text-xs">(mapa)</span></p></div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form class="bg-white rounded-2xl border border-blush-100 p-6 lg:p-8 h-fit" onsubmit="alert('Děkujeme! Toto je ukázkový web — zpráva se zatím neodesílá.'); return false;">
+          <h2 class="font-serif text-2xl mb-6">Napište nám</h2>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <label class="block"><span class="lbl">Jméno a příjmení</span><input type="text" class="fld"></label>
+            <label class="block"><span class="lbl">E-mail</span><input type="email" class="fld"></label>
+            <label class="block sm:col-span-2"><span class="lbl">Telefon</span><input type="tel" class="fld"></label>
+            <label class="block sm:col-span-2"><span class="lbl">Předmět</span>
+              <select class="fld"><option>Dotaz k dortu</option><option>Catering</option><option>Spolupráce</option><option>Jiné</option></select></label>
+            <label class="block sm:col-span-2"><span class="lbl">Zpráva</span><textarea rows="5" placeholder="Jak vám můžeme pomoci?" class="fld"></textarea></label>
+          </div>
+          <button class="btn btn-wine w-full justify-center py-3.5 mt-6"><i data-lucide="send" class="w-4 h-4"></i> Odeslat zprávu</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    const INFO = [
+      ['phone','Telefon','+420 722 456 789','tel:+420722456789'],
+      ['mail','E-mail','info@dortyodandreji.cz','mailto:info@dortyodandreji.cz'],
+      ['map-pin','Kde nás najdete','Pardubice a okolí',''],
+      ['instagram','Sledujte nás','@dortyodandreji','#'],
+    ];
+    document.getElementById('contactInfo').innerHTML = INFO.map(i => `
+      <a ${i[3]?`href="${i[3]}"`:''} class="flex items-center gap-4 bg-white rounded-2xl border border-blush-100 p-5 ${i[3]?'cat-card':''}">
+        <span class="w-12 h-12 grid place-items-center rounded-full bg-blush-50 text-wine shrink-0"><i data-lucide="${i[0]}" class="w-6 h-6"></i></span>
+        <span><span class="block text-xs uppercase tracking-wide text-ink/45">${i[1]}</span><span class="font-medium text-lg">${i[2]}</span></span>
+      </a>`).join('');
+
+    const HOURS = [['Pondělí – Pátek','9:00 – 17:00'],['Sobota','9:00 – 12:00'],['Neděle','Zavřeno']];
+    document.getElementById('hours').innerHTML = HOURS.map(h => `
+      <div class="flex justify-between py-2.5"><dt class="text-ink/60">${h[0]}</dt><dd class="font-medium">${h[1]}</dd></div>`).join('');
+    if (window.lucide) lucide.createIcons();
+  </script>
+</body>
+</html>

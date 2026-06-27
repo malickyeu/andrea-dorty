@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie dortů — Dorty od Andreji</title>
+  <meta name="description" content="Nechte se inspirovat našimi realizacemi. Líbí se vám dort? Klikněte na „Chci podobný" a upravte si ho v Dortfigurátoru.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { wine:{DEFAULT:'#a62447',dark:'#7d1733',light:'#c13a5d'}, blush:{50:'#fdf6f5',100:'#fbeceb',200:'#f8dcdb',300:'#f3c4c4'}, ink:'#3a2b2e', cream:'#fffdfb' },
+      fontFamily: { serif:['"Playfair Display"','serif'], sans:['Poppins','system-ui','sans-serif'], script:['"Great Vibes"','cursive'] },
+    }}}
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-sans text-ink" data-page="galerie.html">
+  <div id="site-header"></div>
+
+  <main>
+    <!-- Title -->
+    <section class="bg-hero">
+      <div class="max-w-7xl mx-auto px-4 py-14 text-center">
+        <p class="font-script text-3xl text-wine">Naše realizace</p>
+        <h1 class="font-serif text-4xl sm:text-5xl">Galerie dortů</h1>
+        <p class="mt-3 text-ink/65 max-w-xl mx-auto">Nechte se inspirovat. Líbí se vám konkrétní dort? Klikněte na <span class="text-wine font-medium">„Chci podobný"</span> a upravte si ho přesně podle sebe.</p>
+      </div>
+    </section>
+
+    <section class="py-10 lg:py-14">
+      <div class="max-w-7xl mx-auto px-4">
+        <!-- Filter bar -->
+        <div class="bg-blush-50 border border-blush-100 rounded-2xl p-4 mb-8 flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 text-sm text-ink/60 font-medium pr-1"><i data-lucide="sliders-horizontal" class="w-4 h-4 text-wine"></i> Filtr</span>
+          <select data-filter="occasion" class="gfilter"><option value="all">Všechny příležitosti</option><option>Narozeniny</option><option>Svatba</option><option>Výročí</option><option>Dětská oslava</option></select>
+          <select data-filter="shape" class="gfilter"><option value="all">Všechny tvary</option><option>Kulatý</option><option>Čtvercový</option><option>Srdce</option></select>
+          <select data-filter="color" class="gfilter"><option value="all">Všechny barvy</option><option>Růžová</option><option>Bílá</option><option>Krémová</option><option>Čokoládová</option><option>Červená</option><option>Modrá</option></select>
+          <select data-filter="flavor" class="gfilter"><option value="all">Všechny příchutě</option><option>Vanilka</option><option>Čokoláda</option><option>Malina</option><option>Jahoda</option><option>Ovoce</option><option>Red velvet</option><option>Oreo</option></select>
+          <div class="ml-auto flex items-center gap-3">
+            <select class="gfilter"><option>Nejnovější</option><option>Nejlevnější</option><option>Nejoblíbenější</option></select>
+            <button class="p-2.5 rounded-lg border border-blush-200 text-wine hover:bg-white" aria-label="Oblíbené"><i data-lucide="heart" class="w-4 h-4"></i></button>
+          </div>
+        </div>
+
+        <p class="text-sm text-ink/50 mb-5"><span id="galleryCount">12</span> dortů</p>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-5" id="galleryGrid"></div>
+
+        <div id="galleryEmpty" class="hidden text-center py-16">
+          <i data-lucide="search-x" class="w-10 h-10 text-wine/50 mx-auto mb-3"></i>
+          <p class="text-ink/60">Žádný dort neodpovídá zvolenému filtru.</p>
+        </div>
+
+        <div class="text-center mt-12">
+          <button class="btn btn-outline px-8 py-3.5"><i data-lucide="plus" class="w-4 h-4"></i> Načíst další</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    const GALLERY = [
+      ['Něžná růžová','ruzova-drip',24,'3 000','Narozeniny','Kulatý','Růžová','Vanilka'],
+      ['Nude s květinami','kremova-masle',18,'3 600','Svatba','Kulatý','Krémová','Vanilka'],
+      ['Dětská oslava','detska-oslava',16,'3 600','Dětská oslava','Kulatý','Modrá','Vanilka'],
+      ['Jahodový sen','jahodova-drip',20,'3 200','Narozeniny','Kulatý','Růžová','Jahoda'],
+      ['Malinová elegance','malinova-elegance',24,'3 000','Narozeniny','Kulatý','Růžová','Malina'],
+      ['Bílá s květy','bila-s-kvety',20,'3 000','Svatba','Kulatý','Bílá','Vanilka'],
+      ['Čokoládové potěšení','cokoladove-poteseni',26,'3 900','Narozeniny','Kulatý','Čokoládová','Čokoláda'],
+      ['Dětský unicorn','unicorn-matrix',16,'3 200','Dětská oslava','Kulatý','Růžová','Vanilka'],
+      ['Lesní plody','lesni-ovoce',24,'3 400','Narozeniny','Kulatý','Červená','Ovoce'],
+      ['Red velvet','red-velvet',22,'3 500','Výročí','Kulatý','Červená','Red velvet'],
+      ['Růžové ombré','ombre-makronky',18,'3 300','Výročí','Kulatý','Růžová','Vanilka'],
+      ['Cookies & cream','oreo-cookies',24,'3 600','Narozeniny','Kulatý','Čokoládová','Oreo'],
+    ];
+    document.getElementById('galleryGrid').innerHTML = GALLERY.map(c => `
+      <article data-cake data-occasion="${c[4]}" data-shape="${c[5]}" data-color="${c[6]}" data-flavor="${c[7]}"
+        class="cake-card group bg-white rounded-2xl overflow-hidden border border-blush-100 flex flex-col">
+        <div class="relative aspect-square overflow-hidden">
+          <img src="assets/img/cakes/${c[1]}.png" alt="${c[0]}" class="cake-img w-full h-full object-cover">
+          <button class="absolute top-3 right-3 w-9 h-9 grid place-items-center rounded-full bg-white/85 backdrop-blur text-wine hover:bg-white" aria-label="Přidat do oblíbených"><i data-lucide="heart" class="w-4 h-4"></i></button>
+        </div>
+        <div class="p-4 flex flex-col flex-1">
+          <h3 class="font-serif text-lg">${c[0]}</h3>
+          <div class="flex items-center gap-3 text-xs text-ink/55 mt-2">
+            <span class="flex items-center gap-1"><i data-lucide="users" class="w-3.5 h-3.5"></i> ${c[2]} porcí</span>
+            <span class="flex items-center gap-1 text-wine font-semibold"><i data-lucide="tag" class="w-3.5 h-3.5"></i> od ${c[3]} Kč</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5 mt-3">
+            <span class="tag">${c[4]}</span><span class="tag">${c[7]}</span>
+          </div>
+          <a href="dortfigurator.html" class="btn btn-soft justify-center w-full mt-4 py-2.5 text-sm group-hover:btn-wine group-hover:bg-wine group-hover:text-white">
+            <i data-lucide="wand-sparkles" class="w-4 h-4"></i> Chci podobný
+          </a>
+        </div>
+      </article>`).join('');
+    if (window.lucide) lucide.createIcons();
+  </script>
+</body>
+</html>
