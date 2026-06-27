@@ -124,6 +124,12 @@ input[type=range].cake-range::-webkit-slider-thumb { -webkit-appearance:none; wi
 input[type=range].cake-range::-moz-range-thumb { width:22px; height:22px; border-radius:9999px;
   background:#fff; border:4px solid var(--wine); cursor:pointer; }
 
+/* Heart section divider (matches the dotted-heart motif in the design) */
+.heart-divider { display:flex; align-items:center; justify-content:center; gap:1rem;
+  max-width:340px; margin:0 auto 2.75rem; color:var(--wine); }
+.heart-divider::before, .heart-divider::after { content:""; flex:1; border-top:2px dotted #e7b6bf; }
+.heart-divider svg, .heart-divider i { width:1.15rem; height:1.15rem; }
+
 /* Reveal on scroll */
 .reveal { opacity:0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in { opacity:1; transform:none; }
