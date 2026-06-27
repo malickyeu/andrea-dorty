@@ -48,7 +48,7 @@ function headerHTML(active) {
 const SOCIALS = [
   { label: 'Instagram', href: '#', svg: `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>` },
   { label: 'Facebook', href: '#', svg: `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v8h4v-8h3l1-4h-4V6.5c0-.6.4-1 1-1h2V2h-3c-2.2 0-4 1.8-4 4v2z"/></svg>` },
-  { label: 'E-mail', href: 'mailto:info@dortyodandreji.cz', svg: `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>` },
+  { label: 'E-mail', href: 'mailto:andrea@majerik.cz', svg: `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>` },
 ];
 
 function footerHTML() {
@@ -74,8 +74,8 @@ function footerHTML() {
       <div>
         <h4 class="text-xs uppercase tracking-widest text-wine font-semibold mb-4">Kontakt</h4>
         <ul class="space-y-3 text-sm text-ink/70">
-          <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-wine"></i> +420 722 456 789</li>
-          <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-wine"></i> info@dortyodandreji.cz</li>
+          <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-wine"></i> +420 777 XXX XXX</li>
+          <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-wine"></i> andrea@majerik.cz</li>
           <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-wine"></i> Pardubice a okolí</li>
         </ul>
       </div>
