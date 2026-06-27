@@ -25,7 +25,7 @@ function headerHTML(active) {
   </div>
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-blush-100">
     <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between gap-4">
-      <a href="index.html" class="shrink-0"><img src="assets/img/logo.png" alt="Dorty od Andreji" class="h-12 w-auto"></a>
+      <a href="index.html" class="shrink-0"><img src="assets/img/logo-header.png" alt="Dorty od Andreji" class="h-10 sm:h-12 w-auto"></a>
       <nav class="hidden lg:flex items-center gap-8">${links}</nav>
       <div class="flex items-center gap-1.5">
         <button class="p-2 rounded-full hover:bg-blush-50 text-ink/70" aria-label="Hledat"><i data-lucide="search" class="w-5 h-5"></i></button>
