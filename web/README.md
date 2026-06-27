@@ -30,13 +30,14 @@ python3 -m http.server 8000
 | `kontakt.html` | Kontakt — údaje, otevírací doba, formulář |
 | `faq.html` | Časté dotazy — interaktivní accordion |
 | `doprava-a-platba.html` | Možnosti převzetí a platební metody |
-| `obchodni-podminky.html` | Obchodní podmínky (ukázkové znění) |
-| `gdpr.html` | Ochrana osobních údajů / GDPR (ukázkové znění) |
+| `obchodni-podminky.html` | „Cake ipsum“ — literární postup na výrobu dortu |
+| `gdpr.html` | „Cake ipsum“ — dortová ipsum místo zásad GDPR |
 | `alergeny.html` | Přehled zákonných alergenů 1–14 |
 
-> **Pozn.:** Obchodní podmínky a GDPR obsahují *ukázkové* znění pro účely
-> návrhu — před spuštěním je nutné doplnit reálné identifikační údaje
-> provozovatele a nechat texty zkontrolovat.
+> **Pozn.:** Obchodní podmínky a GDPR záměrně obsahují žertovný výplňový text
+> („cake ipsum“ — literární postup na pečení dortu), aby bylo na první pohled
+> jasné, že nejde o ostrý web. Před spuštěním je nahraďte reálným zněním
+> a doplňte identifikační údaje provozovatele.
 
 ## Struktura
 
