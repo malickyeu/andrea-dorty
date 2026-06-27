@@ -35,8 +35,21 @@ body { color: #3a2b2e; background: #fffdfb; }
   position: relative;
   background-image: url('../img/hero-background.png');
   background-size: cover;
+  background-position: center;   /* full-width image; trims only the empty top/bottom margins */
+  background-repeat: no-repeat;
+}
+
+/* Catering banner with supplied background (desserts on the right) */
+.catering-bg {
+  background-image: url('../img/catering-bg.png');
+  background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
+  background-color: #f8dcdd;
+}
+.catering-glow {
+  background:
+    linear-gradient(to right, #fbe1e2 0%, rgba(251,225,226,.6) 36%, rgba(251,225,226,0) 62%);
 }
 /* White inner glow — softens edges and blends the hero into the rest of the page */
 .hero-glow {
@@ -81,7 +94,7 @@ body { color: #3a2b2e; background: #fffdfb; }
   border-radius:9999px; transition:all .2s ease; cursor:pointer; }
 .btn-wine { background: var(--wine); color:#fff; box-shadow:0 10px 24px -12px rgba(166,36,71,.7); }
 .btn-wine:hover { background: var(--wine-dark); transform: translateY(-1px); }
-.btn-outline { border:1.5px solid var(--wine); color: var(--wine); background:transparent; }
+.btn-outline { border:1.5px solid var(--wine); color: var(--wine); background:#fff; }
 .btn-outline:hover { background: var(--wine); color:#fff; }
 .btn-soft { background:#fff; color: var(--wine); border:1px solid var(--blush-200); }
 .btn-soft:hover { background: var(--blush-50); }
