@@ -78,6 +78,15 @@ body { color: #3a2b2e; background: #fffdfb; }
 /* catering scene hero (catering.html) — uniform pink matches the no-edges image.
    Higher specificity so it wins over the later .scene-hero default bg-color. */
 .scene-hero.scene-catering { background-color: #fca2b2; }
+
+/* O nás banner — cover (image fills whole banner, no exposed bg-color = no seam) */
+.onas-bg {
+  background-image: url('../img/alt-hero.png');
+  background-size: cover;
+  background-position: center 32%;
+  background-repeat: no-repeat;
+  background-color: #fbeaea;
+}
 .catering-glow {
   background:
     linear-gradient(to right, #fbe1e2 0%, rgba(251,225,226,.6) 36%, rgba(251,225,226,0) 62%);
