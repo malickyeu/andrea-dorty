@@ -73,8 +73,10 @@ body { color: #3a2b2e; background: #fffdfb; }
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
-  background-color: #f8dcdd;
+  background-color: #fca2b2;
 }
+/* catering scene hero (catering.html) — uniform pink matches the no-edges image */
+.scene-catering { background-color: #fca2b2; }
 .catering-glow {
   background:
     linear-gradient(to right, #fbe1e2 0%, rgba(251,225,226,.6) 36%, rgba(251,225,226,0) 62%);
