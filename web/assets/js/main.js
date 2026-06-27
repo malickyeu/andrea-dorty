@@ -165,8 +165,8 @@ function initConfigurator() {
   const root = document.getElementById('configurator');
   if (!root) return;
 
-  const PRICES = { base: 1200, perServing: 90, tiers: { '1': 0, '2': 900, '3': 1800, 'více': 2800 } };
-  const state = { occasion: 'Narozeniny', servings: 20, shape: 'Kulatý', tiers: '2' };
+  const PRICES = { base: 1650, perServing: 90, tiers: { '1': 0, '2': 900, '3': 1800, 'více': 2800 } };
+  const state = { occasion: 'Narozeniny', servings: 20, shape: 'Kulatý', tiers: '1' };
 
   // option tiles
   root.querySelectorAll('[data-opt]').forEach(tile => {

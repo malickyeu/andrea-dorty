@@ -15,7 +15,7 @@
       fontFamily: { serif:['"Playfair Display"','serif'], sans:['Poppins','system-ui','sans-serif'], script:['"Great Vibes"','cursive'] },
     }}}
   </script>
-  <link rel="stylesheet" href="assets/css/styles.css?v=16">
+  <link rel="stylesheet" href="assets/css/styles.css?v=17">
 </head>
 <body class="font-sans text-ink bg-blush-50" data-page="dortfigurator.html">
   <div id="site-header"></div>
@@ -54,13 +54,13 @@
             <input type="range" id="servings" class="cake-range w-full" min="6" max="80" value="20" step="2">
             <div class="flex justify-between text-xs text-ink/45 mt-2 mb-9"><span>6 porcí</span><span>80 porcí</span></div>
 
-            <!-- Tvar -->
-            <h3 class="text-sm font-semibold uppercase tracking-wide text-ink/70 mb-3">Tvar dortu</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-9" id="shapeGrid"></div>
-
             <!-- Patra -->
             <h3 class="text-sm font-semibold uppercase tracking-wide text-ink/70 mb-3">Počet pater</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="tiersGrid"></div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-9" id="tiersGrid"></div>
+
+            <!-- Tvar -->
+            <h3 class="text-sm font-semibold uppercase tracking-wide text-ink/70 mb-3">Tvar dortu</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="shapeGrid"></div>
           </div>
 
           <div class="flex items-center justify-between">
@@ -90,17 +90,20 @@
               <img src="assets/img/cakes/ruzova-drip.png" alt="Náhled dortu" class="w-48 drop-shadow-xl rounded-2xl">
             </div>
             <div class="p-5">
-              <h4 class="text-xs uppercase tracking-wide text-ink/50 mb-3">Vaše volby</h4>
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-xs uppercase tracking-wide text-ink/50">Vaše volby</h4>
+                <a href="#" class="text-xs text-wine font-medium hover:underline inline-flex items-center gap-1"><i data-lucide="pencil" class="w-3 h-3"></i> Upravit</a>
+              </div>
               <dl class="space-y-2.5 text-sm">
                 <div class="flex justify-between"><dt class="text-ink/55">Příležitost</dt><dd id="sumOccasion" class="font-medium">Narozeniny</dd></div>
-                <div class="flex justify-between"><dt class="text-ink/55">Tvar</dt><dd id="sumShape" class="font-medium">Kulatý</dd></div>
-                <div class="flex justify-between"><dt class="text-ink/55">Počet pater</dt><dd id="sumTiers" class="font-medium">2 patra</dd></div>
                 <div class="flex justify-between"><dt class="text-ink/55">Počet porcí</dt><dd id="previewServings" class="font-medium">20 porcí</dd></div>
+                <div class="flex justify-between"><dt class="text-ink/55">Počet pater</dt><dd id="sumTiers" class="font-medium">1 patro</dd></div>
+                <div class="flex justify-between"><dt class="text-ink/55">Tvar</dt><dd id="sumShape" class="font-medium">Kulatý</dd></div>
                 <div class="flex justify-between"><dt class="text-ink/55">Orientační hmotnost</dt><dd id="previewWeight" class="font-medium">4,4 kg</dd></div>
               </dl>
               <div class="border-t border-blush-100 mt-4 pt-4">
                 <p class="text-xs uppercase tracking-wide text-ink/50">Orientační cena</p>
-                <p id="previewPrice" class="font-serif text-3xl text-wine font-semibold">3 600 Kč</p>
+                <p id="previewPrice" class="font-serif text-3xl text-wine font-semibold">3 450 Kč</p>
                 <p class="text-xs text-ink/45 mt-1">Konečná cena dle finálních detailů a dekorace.</p>
               </div>
               <div class="flex gap-2 mt-5">
@@ -114,13 +117,22 @@
           </div>
         </aside>
       </div>
+
+      <!-- Co se k tomu hodí -->
+      <div class="mt-14">
+        <div class="text-center mb-8">
+          <p class="font-script text-2xl text-wine">Sladká inspirace</p>
+          <h2 class="font-serif text-2xl sm:text-3xl">Co se k tomu hodí?</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" id="addonGrid"></div>
+      </div>
     </div>
   </main>
 
   <div id="site-footer"></div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="assets/js/main.js?v=16"></script>
+  <script src="assets/js/main.js?v=17"></script>
   <script>
     // Step bar
     const STEPS = [['cake','Základ'],['layers','Náplně'],['paint-bucket','Potah'],['flower-2','Dekorace'],['type','Text a grafika'],['sliders-horizontal','Detaily'],['clipboard-check','Shrnutí']];
@@ -136,7 +148,7 @@
 
     // Option tiles
     const OCCASIONS = [['cake','Narozeniny'],['heart','Svatba'],['party-popper','Dětská oslava'],['gem','Výročí'],['briefcase','Firemní'],['badge-percent','Promo akce'],['gift','Křtiny'],['more-horizontal','Jiné']];
-    const SHAPES = [['circle','Kulatý'],['square','Čtvercový'],['rectangle-horizontal','Obdélníkový'],['heart','Srdce']];
+    const SHAPES = [['circle','Kulatý'],['square','Čtvercový'],['rectangle-horizontal','Obdélníkový'],['heart','Srdce'],['hexagon','Šestiúhelník'],['shapes','Jiný tvar']];
     const TIERS = [['1 patro','1'],['2 patra','2'],['3 patra','3'],['Více pater','více']];
 
     function tile(key, ico, label, val, selected) {
@@ -147,7 +159,25 @@
     }
     document.getElementById('occasionGrid').innerHTML = OCCASIONS.map((o,i) => tile('occasion',o[0],o[1],o[1],i===0)).join('');
     document.getElementById('shapeGrid').innerHTML = SHAPES.map((s,i) => tile('shape',s[0],s[1],s[1],i===0)).join('');
-    document.getElementById('tiersGrid').innerHTML = TIERS.map((t,i) => tile('tiers', i===3?'layers':'cake', t[0], t[1], i===1)).join('');
+    document.getElementById('tiersGrid').innerHTML = TIERS.map((t,i) => tile('tiers', i===3?'layers':'cake', t[0], t[1], i===0)).join('');
+
+    // Co se k tomu hodí — cross-sell
+    const ADDONS = [
+      ['Cupcakes','cat-cupcakes','od 45 Kč/ks'],
+      ['Makronky','cat-makronky','od 25 Kč/ks'],
+      ['Cukroví','cat-cukrovi','od 390 Kč/kg'],
+      ['Dárkové balení','cat-darkove-balicky','od 120 Kč'],
+      ['Svíčky a topper','cat-dorty','od 60 Kč'],
+    ];
+    document.getElementById('addonGrid').innerHTML = ADDONS.map(a => `
+      <div class="bg-white rounded-2xl border border-blush-100 overflow-hidden cat-card">
+        <div class="aspect-square overflow-hidden"><img src="assets/img/${a[1]}.png" alt="${a[0]}" class="w-full h-full object-cover"></div>
+        <div class="p-3">
+          <p class="font-medium text-sm leading-tight">${a[0]}</p>
+          <p class="text-xs text-wine font-semibold mt-0.5">${a[2]}</p>
+          <button class="btn btn-soft w-full justify-center mt-2 py-1.5 text-xs"><i data-lucide="plus" class="w-3.5 h-3.5"></i> Přidat</button>
+        </div>
+      </div>`).join('');
 
     if (window.lucide) lucide.createIcons();
     // Tiles are built above (inline, before DOMContentLoaded), so main.js
