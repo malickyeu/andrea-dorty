@@ -43,7 +43,10 @@ body { color: #3a2b2e; background: #fffdfb; }
 /* On desktop the scene is an <img> on the right (full, not cropped), so the
    section height can follow the viewport (~half screen) without cutting the cake. */
 .hero-scene {
-  position: absolute; top: 0; right: 0; height: 100%; width: auto; max-width: none;
+  position: absolute; top: 0; height: 100%; width: auto; max-width: none;
+  /* anchor to the right edge of the centered content container (max-w-7xl = 80rem),
+     not the full-width section — keeps the cake with the content on wide screens */
+  right: max(0px, (100% - 80rem) / 2);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 16%);
   mask-image: linear-gradient(to right, transparent 0%, #000 16%);
 }
