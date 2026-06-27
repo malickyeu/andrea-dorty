@@ -50,7 +50,11 @@ body { color: #3a2b2e; background: #fffdfb; }
   -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 16%);
   mask-image: linear-gradient(to right, transparent 0%, #000 16%);
 }
-@media (min-width: 1024px) { .hero-bg { background-image: none; } }
+@media (min-width: 1024px) {
+  /* gradient podklad: vlevo #fbeaea (sedí s levým krajem fotky), vpravo do barvy
+     pravého kraje fotky, aby odhalená plocha za fotkou neměla šev */
+  .hero-bg { background-image: linear-gradient(to right, #fbeaea 0%, #fbeaea 52%, #ecc9c7 80%, #ecc9c7 100%); }
+}
 
 /* Reusable scene hero for sub-pages (pink area for text + photo scene to one side) */
 .scene-hero { position: relative; background-color: #fbeaea; }
