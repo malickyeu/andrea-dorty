@@ -15,22 +15,22 @@
       fontFamily: { serif:['"Playfair Display"','serif'], sans:['Poppins','system-ui','sans-serif'], script:['"Great Vibes"','cursive'] },
     }}}
   </script>
-  <link rel="stylesheet" href="assets/css/styles.css?v=4">
+  <link rel="stylesheet" href="assets/css/styles.css?v=5">
 </head>
 <body class="font-sans text-ink" data-page="o-nas.html">
   <div id="site-header"></div>
 
   <main>
-    <section class="bg-hero">
-      <div class="max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-2 gap-10 items-center">
-        <div>
+    <section class="scene-hero relative overflow-hidden lg:h-[48vh] lg:min-h-[380px] lg:max-h-[520px]">
+      <img src="assets/img/alt-hero.png" alt="" aria-hidden="true" class="hero-scene-left hidden lg:block">
+      <div class="hero-glow-r absolute inset-0 pointer-events-none"></div>
+      <div class="relative lg:h-full max-w-7xl mx-auto px-4 py-14 lg:py-0 flex items-center lg:justify-end">
+        <div class="max-w-lg reveal">
           <p class="font-script text-3xl text-wine">Náš příběh</p>
           <h1 class="font-serif text-4xl sm:text-5xl leading-tight">Pečeme s láskou,<br>od první mouky</h1>
-          <p class="mt-5 text-ink/70 max-w-md">Dorty od Andreji vznikly z vášně pro cukrařinu a radosti, kterou přináší sladký okamžik. Každý dort tvoříme ručně, z čerstvých surovin od lokálních dodavatelů a s důrazem na každý detail.</p>
-          <p class="mt-4 text-ink/70 max-w-md">Ať už slavíte narozeniny, svatbu nebo jen tak — postaráme se, aby byl váš dort stejně výjimečný jako vaše chvíle.</p>
+          <p class="mt-5 text-ink/75 max-w-md">Dorty od Andreji vznikly z vášně pro cukrařinu a radosti, kterou přináší sladký okamžik. Každý dort tvoříme ručně, z čerstvých surovin a s důrazem na každý detail.</p>
           <a href="dortfigurator.html" class="btn btn-wine px-7 py-3.5 mt-7"><i data-lucide="wand-sparkles" class="w-5 h-5"></i> Navrhnout dort</a>
         </div>
-        <img src="assets/img/hero-cake.png" alt="Dort od Andreji" class="w-full max-w-md mx-auto rounded-3xl drop-shadow-2xl">
       </div>
     </section>
 
@@ -52,7 +52,7 @@
   <div id="site-footer"></div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="assets/js/main.js?v=4"></script>
+  <script src="assets/js/main.js?v=5"></script>
   <script>
     const STATS = [['8+','let zkušeností'],['1 200+','upečených dortů'],['500+','spokojených zákazníků'],['100%','ručně zdobeno']];
     document.getElementById('stats').innerHTML = STATS.map(s => `
