@@ -70,7 +70,7 @@
       ['phone','Telefon','+420 722 456 789','tel:+420722456789'],
       ['mail','E-mail','info@dortyodandreji.cz','mailto:info@dortyodandreji.cz'],
       ['map-pin','Kde nás najdete','Pardubice a okolí',''],
-      ['instagram','Sledujte nás','@dortyodandreji','#'],
+      ['at-sign','Sledujte nás','@dortyodandreji','#'],
     ];
     document.getElementById('contactInfo').innerHTML = INFO.map(i => `
       <a ${i[3]?`href="${i[3]}"`:''} class="flex items-center gap-4 bg-white rounded-2xl border border-blush-100 p-5 ${i[3]?'cat-card':''}">

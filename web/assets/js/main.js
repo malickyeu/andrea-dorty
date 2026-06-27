@@ -44,6 +44,13 @@ function headerHTML(active) {
   </header>`;
 }
 
+// Brand/social icons inline (lucide dropped brand glyphs, so we ship our own)
+const SOCIALS = [
+  { label: 'Instagram', href: '#', svg: `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>` },
+  { label: 'Facebook', href: '#', svg: `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v8h4v-8h3l1-4h-4V6.5c0-.6.4-1 1-1h2V2h-3c-2.2 0-4 1.8-4 4v2z"/></svg>` },
+  { label: 'E-mail', href: 'mailto:info@dortyodandreji.cz', svg: `<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>` },
+];
+
 function footerHTML() {
   const col = (title, items) =>
     `<div><h4 class="text-xs uppercase tracking-widest text-wine font-semibold mb-4">${title}</h4>
@@ -51,11 +58,15 @@ function footerHTML() {
   return `
   <footer class="bg-petal border-t border-blush-100 mt-4">
     <div class="max-w-7xl mx-auto px-4 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-5">
-      <div class="lg:col-span-2 max-w-sm">
-        <img src="assets/img/logo.png" alt="Dorty od Andreji" class="h-14 w-auto mb-4">
-        <p class="text-sm text-ink/70 leading-relaxed">Zakázková cukrářská výroba dortů, sladkostí a sweet cateringu. Každý dort je dělaný s láskou a z čerstvých surovin.</p>
-        <div class="flex gap-3 mt-5">
-          ${['instagram','facebook','mail'].map(s => `<a href="#" class="w-9 h-9 grid place-items-center rounded-full bg-white border border-blush-200 text-wine hover:bg-wine hover:text-white transition" aria-label="${s}"><i data-lucide="${s}" class="w-4 h-4"></i></a>`).join('')}
+      <div class="lg:col-span-2 max-w-md">
+        <div class="flex gap-5 items-start">
+          <img src="assets/img/logo-footer.png" alt="Dorty od Andreji" class="h-32 sm:h-36 w-auto shrink-0">
+          <div>
+            <p class="text-sm text-ink/70 leading-relaxed">Zakázková cukrářská výroba dortů, sladkostí a sweet cateringu. Každý dort je dělaný s láskou a z čerstvých surovin.</p>
+            <div class="flex gap-3 mt-5">
+              ${SOCIALS.map(s => `<a href="${s.href}" aria-label="${s.label}" class="w-9 h-9 grid place-items-center rounded-full bg-white border border-blush-200 text-wine hover:bg-wine hover:text-white transition">${s.svg}</a>`).join('')}
+            </div>
+          </div>
         </div>
       </div>
       ${col('Rychlé odkazy', [['Galerie','galerie.html'],['Dortfigurátor','dortfigurator.html'],['Sweet catering','catering.html'],['O nás','o-nas.html']])}
