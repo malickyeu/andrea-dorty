@@ -71,7 +71,7 @@ body { color: #3a2b2e; background: #fffdfb; }
 .catering-bg {
   background-image: url('../img/catering-bg.png');
   background-size: cover;
-  background-position: center right;
+  background-position: center 72%;
   background-repeat: no-repeat;
   background-color: #fca2b2;
 }
