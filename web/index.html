@@ -32,11 +32,12 @@
 
   <main>
     <!-- HERO -->
-    <section class="bg-hero overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 py-16 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+    <section class="hero-bg relative overflow-hidden lg:aspect-[1717/916]">
+      <div class="hero-glow absolute inset-0 pointer-events-none"></div>
+      <div class="relative lg:h-full max-w-7xl mx-auto px-4 py-14 lg:py-0 grid lg:grid-cols-2 gap-10 items-center">
         <div class="reveal">
-          <span class="inline-flex items-center gap-2 text-wine text-sm font-medium bg-white/70 px-4 py-1.5 rounded-full mb-6">
-            <i data-lucide="cake-slice" class="w-4 h-4"></i> Cukrářské studio · Pardubice a okolí
+          <span class="inline-flex items-center gap-2 text-wine text-xs font-semibold uppercase tracking-wider mb-5">
+            <i data-lucide="sparkles" class="w-4 h-4"></i> S láskou pečené, pro váš výjimečný den
           </span>
           <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] text-ink">
             Dorty, které dělají<br>vaše chvíle
@@ -44,37 +45,34 @@
             <i data-lucide="heart" class="inline w-7 h-7 text-wine fill-wine align-middle"></i>
           </h1>
           <p class="mt-6 text-ink/70 text-lg max-w-md leading-relaxed">
-            Navrhněte si dort snů v našem Dortfigurátoru, nebo se inspirujte galerií realizací. Ručně zdobené, z čerstvých surovin, přesně pro vaši příležitost.
+            Navrhněte si dort snů v našem Dortfigurátoru, nebo se inspirujte galerií našich realizací.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="dortfigurator.html" class="btn btn-wine px-7 py-3.5">
-              <i data-lucide="wand-sparkles" class="w-5 h-5"></i> Navrhnout v Dortfigurátoru
+              <i data-lucide="cake" class="w-5 h-5"></i> Navrhnout vlastní dort
             </a>
             <a href="galerie.html" class="btn btn-outline px-7 py-3.5">
               <i data-lucide="images" class="w-5 h-5"></i> Prohlédnout galerii
             </a>
           </div>
-          <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-ink/65">
-            <span class="flex items-center gap-2"><i data-lucide="star" class="w-4 h-4 text-wine fill-wine"></i> 4,9 / 5 hodnocení</span>
-            <span class="flex items-center gap-2"><i data-lucide="badge-check" class="w-4 h-4 text-wine"></i> 500+ spokojených zákazníků</span>
+          <div class="mt-9 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-lg">
+            <div class="flex items-start gap-2.5"><i data-lucide="leaf" class="w-5 h-5 text-wine shrink-0 mt-0.5"></i><div><p class="text-sm font-semibold leading-tight">Poctivé suroviny</p><p class="text-xs text-ink/55">kvalita na prvním místě</p></div></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="hand-heart" class="w-5 h-5 text-wine shrink-0 mt-0.5"></i><div><p class="text-sm font-semibold leading-tight">Ruční výroba</p><p class="text-xs text-ink/55">každý dort je originál</p></div></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="calendar-check" class="w-5 h-5 text-wine shrink-0 mt-0.5"></i><div><p class="text-sm font-semibold leading-tight">Včasné doručení</p><p class="text-xs text-ink/55">postaráme se o termín</p></div></div>
           </div>
         </div>
 
-        <div class="relative reveal">
-          <div class="relative mx-auto w-fit">
-            <img src="assets/img/hero-cake.png" alt="Patrový dort s růžemi" class="w-[300px] sm:w-[380px] lg:w-[440px] drop-shadow-2xl rounded-3xl">
-            <!-- love card -->
-            <div class="absolute -bottom-4 -left-2 sm:left-0 bg-white rounded-2xl shadow-xl px-5 py-4 max-w-[200px]">
-              <div class="flex items-center gap-1 text-wine mb-1">
-                <i data-lucide="heart" class="w-4 h-4 fill-wine"></i>
-              </div>
-              <p class="text-sm font-medium leading-snug">Každý dort je dělaný <span class="text-wine font-semibold">s láskou</span></p>
+        <!-- right column: floating accents over the background cake -->
+        <div class="relative hidden lg:block min-h-[440px] reveal">
+          <div class="absolute top-6 right-1 bg-white/95 backdrop-blur rounded-2xl shadow-xl px-4 py-3 text-center">
+            <p class="text-[11px] uppercase tracking-wide text-ink/50">již od</p>
+            <p class="font-serif text-xl text-wine font-semibold">3 000 Kč</p>
+          </div>
+          <div class="absolute bottom-4 left-0 bg-white rounded-2xl shadow-xl px-5 py-4 max-w-[210px]">
+            <div class="flex items-center gap-1 text-wine mb-1">
+              <i data-lucide="heart" class="w-4 h-4 fill-wine"></i>
             </div>
-            <!-- price badge -->
-            <div class="absolute top-4 -right-3 sm:-right-6 bg-white/95 backdrop-blur rounded-2xl shadow-xl px-4 py-3 text-center">
-              <p class="text-[11px] uppercase tracking-wide text-ink/50">již od</p>
-              <p class="font-serif text-xl text-wine font-semibold">3 000 Kč</p>
-            </div>
+            <p class="text-sm font-medium leading-snug">Každý dort je dělaný <span class="text-wine font-semibold">s láskou</span></p>
           </div>
         </div>
       </div>
@@ -113,8 +111,8 @@
             <p class="mt-5 text-ink/70 max-w-sm">Svatby, oslavy, firemní akce nebo sweet bary. Připravíme nabídku na míru přesně pro vás — od cupcakes po velký dort.</p>
             <a href="catering.html" class="btn btn-wine px-7 py-3.5 mt-7"><i data-lucide="utensils" class="w-5 h-5"></i> Poptat catering</a>
           </div>
-          <div class="h-full min-h-[260px]">
-            <img src="assets/img/catering.png" alt="Sweet catering — dezertní stůl" class="w-full h-full object-cover">
+          <div class="h-full min-h-[280px]">
+            <img src="assets/img/catering.png" alt="Sweet catering — dezertní stůl" class="catering-img w-full h-full object-cover">
           </div>
         </div>
       </div>
